@@ -9,12 +9,22 @@ $(document).ready(function () {
   function appendImages() {
     const container = $('.image-grid');
 
-    for (let i = 0; i < 6; i++) {
+    const imageUrls = [
+      'https://placehold.jp/400x400.png',
+      'https://placehold.jp/400x400.png',
+      'https://placehold.jp/400x400.png',
+      'https://placehold.jp/400x400.png',
+      'https://placehold.jp/400x400.png',
+      'https://placehold.jp/400x400.png'
+    ];
+
+    imageUrls.forEach((url, index) => {
+      const rowClass = index < 3 ? 'row-1' : 'row-2';
       const img = $('<img>')
-        .attr('src', 'https://placehold.jp/400x400.png')
-        .addClass(`row-${i < 3 ? '1' : '2'}`);
+        .attr('src', url)
+        .addClass(rowClass);
       container.append(img);
-    }
+    });
 
     setTimeout(() => {
       $('.image-grid .row-1').addClass('visible');
