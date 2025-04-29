@@ -1,5 +1,12 @@
+@charset "UTF-8";
+
+// カラーバリエーションの変数定義
+$font-family-base: Arial, sans-serif;
+$color-bg-spacer: #f9f9f9;
+$color-bg-image-section: #e9f0ff;
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: $font-family-base;
   margin: 0;
   padding: 0;
 }
@@ -7,12 +14,12 @@ body {
 .spacer {
   height: 1000px;
   padding: 40px;
-  background-color: #f9f9f9;
+  background-color: $color-bg-spacer;
 }
 
 .image-section {
   padding: 50px;
-  background-color: #e9f0ff;
+  background-color: $color-bg-image-section;
   text-align: center;
   min-height: 500px;
 }
@@ -23,17 +30,19 @@ body {
   gap: 20px;
   justify-items: center;
   margin-top: 30px;
-}
 
-.image-grid img {
-  width: 100%;
-  max-width: 400px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1.5s ease-out, transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
-}
+  img {
+    width: 100%;
+    max-width: 400px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      opacity 1.5s ease-out,
+      transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
 
-.image-grid img.visible {
-  opacity: 1;
-  transform: translateY(0);
+    &.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }

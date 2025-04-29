@@ -24,7 +24,6 @@ body {
   justify-items: center;
   margin-top: 30px;
 }
-
 .image-grid img {
   width: 100%;
   max-width: 400px;
@@ -32,7 +31,6 @@ body {
   transform: translateY(40px);
   transition: opacity 1.5s ease-out, transform 1.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
-
 .image-grid img.visible {
   opacity: 1;
   transform: translateY(0);
